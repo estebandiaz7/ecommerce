@@ -1,16 +1,14 @@
-import { createClient } from '@/utils/supabase/server'
+import { supabase } from '@/lib/supabase'
 
 export default async function TestPage() {
-  const supabase = createClient()
-
-  const { data: healthCheck } = await supabase.from('_health').select('*')
-
+  const { data: healthCheck } = await supabase
+    .from('users')
+    .select('*')
+    .limit(1)
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Supabase Connection Test</h1>
-      <pre className="bg-gray-100 p-4 rounded">
-        {JSON.stringify(healthCheck, null, 2)}
-      </pre>
+    <div>
+      <h1>Test Page</h1>
+      <pre>{JSON.stringify(healthCheck, null, 2)}</pre>
     </div>
   )
 }
