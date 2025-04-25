@@ -2,8 +2,8 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # Ensure correct Node.js version
-if [ -f .nvmrc ]; then
-  nvm use
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use 20.11
 
 yarn preCommit 
