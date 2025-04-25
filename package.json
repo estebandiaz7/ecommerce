@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "dev": "nvm use && next dev",
+    "build": "nvm use && next build",
+    "start": "nvm use && next start",
+    "lint": "nvm use && next lint",
+    "test": "nvm use && jest",
+    "test:watch": "nvm use && jest --watch",
     "prepare": "husky install"
   },
   "dependencies": {
